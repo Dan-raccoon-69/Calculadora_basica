@@ -1,0 +1,95 @@
+:root {
+  --bg__light: linear-gradient(90deg,#f8f2ce,#ececec);
+  --bgcalculadora__light: #13141a;
+  --key__opera__light: #fff;
+  --key__opera2__light: #066699;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg__light);
+}
+
+button {
+  border: none;
+  outline: none;
+  width: 7rem;
+  height: 7rem;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.contenedor {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contenedor .calculadora {
+  height: auto;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--bgcalculadora__light);
+  position: relative;
+}
+.contenedor .calculadora .display__screen {
+  width: 98%;
+  height: 3.7rem;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #bdb495;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+.contenedor .calculadora .btn__operator {
+  background-color: var(--key__opera__light);
+}
+.contenedor .calculadora .btn__operator:hover {
+  --key__opera__light: rgba(255, 255, 255, 0.85);
+  background-color: var(--key__opera__light);
+}
+.contenedor .calculadora #clean, .contenedor .calculadora #D {
+  background-color: var(--key__opera2__light);
+}
+.contenedor .calculadora #clean:hover, .contenedor .calculadora #D:hover {
+  --key__opera2__light: #1b7cb0;
+  background-color: var(--key__opera2__light);
+}
+.contenedor .calculadora .btn__igual {
+  height: 14.6rem;
+}
+.contenedor .calculadora .theme__light {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 10rem;
+  height: 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--key__opera__light);
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.contenedor .calculadora .theme__light:hover {
+  box-shadow: 1px 1px 10px var(--key__opera__light);
+}/*# sourceMappingURL=styles.css.map */
