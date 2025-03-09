@@ -2,17 +2,34 @@ const buttons = document.querySelectorAll('button');
 const display = document.querySelector('.display');  
 const body = document.querySelector('body');  
 
-// theme  
 const active = document.querySelector('.active');  
 let theme = false;  
 const dark = document.querySelector('.dark');  
 display.innerHTML = '';  
 
-// Historial  
 const history = [];  
-const historyList = document.createElement('ol'); // Lista ordenada  
-historyList.style.listStyleType = 'none'; // Eliminar viñetas  
-body.appendChild(historyList); // Agregar la lista al body  
+const historyList = document.createElement('ol');  
+historyList.style.listStyleType = 'none';
+body.appendChild(historyList);  
+
+function deleteLastNumberAndOperator() {  
+    let cadena = display.innerHTML.toString();  
+    if (cadena.length === 0) return;  
+
+    let lastOperatorIndex = -1;  
+    for (let i = cadena.length - 1; i >= 0; i--) {  
+        if (['+', '-', '*', '/'].includes(cadena[i])) {  
+            lastOperatorIndex = i;  
+            break;  
+        }  
+    }  
+
+    if (lastOperatorIndex !== -1) {  
+        display.innerHTML = cadena.substring(0, lastOperatorIndex);  
+    } else {  
+        display.innerHTML = '';  
+    }  
+}  
 
 buttons.forEach(item => {  
     item.onclick = () => {  
@@ -21,6 +38,9 @@ buttons.forEach(item => {
         else if (item.id === 'D') {  
             let cadena = display.innerHTML.toString();  
             display.innerHTML = cadena.substring(0, cadena.length - 1);  
+        }  
+        else if (item.id === 'deleteLastNumber') { 
+            deleteLastNumberAndOperator();  
         }  
         else if (item.id === '.') {  
             if (display.innerHTML.includes('.')) {  
@@ -48,10 +68,9 @@ buttons.forEach(item => {
                     display.innerHTML = "Error";  
                     setTimeout(() => (display.innerHTML = ""), 1200);  
                 } else {  
-                    const formattedResult = parseFloat(result.toFixed(2)); // Sin ceros innecesarios  
+                    const formattedResult = parseFloat(result.toFixed(2));  
                     display.innerHTML = formattedResult;  
 
-                    // Agregar al historial  
                     history.push(`${expression} = ${formattedResult}`);  
                     updateHistoryList();  
                 }  
@@ -95,7 +114,7 @@ function updateHistoryList() {
     historyList.innerHTML = '';  
     for (let i = history.length - 1; i >= 0; i--) {  
         const listItem = document.createElement('li');  
-        listItem.textContent = `[${[i+1]}]    ${history[i]}`;  
+        listItem.textContent = `[${[i + 1]}]    ${history[i]}`;  
         historyList.appendChild(listItem);  
     }  
-}
+}  
