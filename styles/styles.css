@@ -1,14 +1,23 @@
 :root {
-  --bg__light: linear-gradient(90deg,#f8f2ce,#ececec);
-  --bgcalculadora__light: #13141a;
-  --key__opera__light: #fff;
-  --key__opera2__light: #066699;
+  /* Light Theme */
+  --bg__light: #f0f0f0;
+  --bgcalculadora__light: #ffffff;
+  --key__opera__light: #e0e0e0;
+  --key__opera2__light: #d0d0d0;
+  --text__light: #333;
+  /* Dark Theme */
+  --bg__dark: #181818;
+  --bgcalculadora__dark: #242424;
+  --key__opera__dark: #ddd;
+  --key__opera2__dark: #1b7cb0;
+  --text__dark: #fff;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 html {
@@ -16,9 +25,11 @@ html {
 }
 
 body {
-  font-size: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  font-family: "Roboto", sans-serif;
   background: var(--bg__light);
+  color: var(--text__light);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 button {
@@ -28,34 +39,40 @@ button {
   height: 7rem;
   margin-bottom: 0.5rem;
   margin-right: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 1.5rem;
   cursor: pointer;
   transition: all 200ms ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
 }
 
 .contenedor {
   width: 100%;
-  height: 100vh;
+  height: 65vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .contenedor .calculadora {
-  height: auto;
-  border: 1px solid black;
-  border-radius: 1rem;
+  width: 35rem;
+  border-radius: 1.5rem;
   padding: 2rem;
   background-color: var(--bgcalculadora__light);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 .contenedor .calculadora .display__screen {
   width: 98%;
-  height: 3.7rem;
+  height: 5rem;
   display: flex;
-  flex-wrap: nowrap;
-  background-color: #bdb495;
-  border-radius: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 3rem;
+  overflow: hidden;
+  background-color: rgba(128, 203, 195, 0.6823529412);
+  border-radius: 1.5rem;
   padding: 0.7rem;
   margin-bottom: 1rem;
 }
@@ -63,33 +80,72 @@ button {
   background-color: var(--key__opera__light);
 }
 .contenedor .calculadora .btn__operator:hover {
-  --key__opera__light: rgba(255, 255, 255, 0.85);
-  background-color: var(--key__opera__light);
+  background-color: lightgray;
 }
-.contenedor .calculadora #clean, .contenedor .calculadora #D {
+.contenedor .calculadora #clean,
+.contenedor .calculadora #D {
   background-color: var(--key__opera2__light);
+  color: var(--text__light);
 }
-.contenedor .calculadora #clean:hover, .contenedor .calculadora #D:hover {
-  --key__opera2__light: #1b7cb0;
-  background-color: var(--key__opera2__light);
+.contenedor .calculadora #clean:hover,
+.contenedor .calculadora #D:hover {
+  background-color: #c3c3c3;
 }
 .contenedor .calculadora .btn__igual {
   height: 14.6rem;
+  background-color: rgba(128, 203, 195, 0.6823529412);
+  color: white;
+}
+.contenedor .calculadora .btn__igual:hover {
+  background-color: rgba(92, 188, 178, 0.6823529412);
 }
 .contenedor .calculadora .theme__light {
-  position: relative;
-  top: 0;
-  right: 0;
   width: 10rem;
   height: 3rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--key__opera__light);
   cursor: pointer;
   transition: all 0.4s;
 }
 .contenedor .calculadora .theme__light:hover {
   box-shadow: 1px 1px 10px var(--key__opera__light);
+}
+.contenedor .historial {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  background: var(--bgcalculadora__light);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+  list-style: circle;
+  text-align: center;
+  width: 100%;
+}
+.contenedor.dark {
+  background: var(--bg__dark);
+}
+.contenedor.dark .calculadora {
+  background-color: var(--bgcalculadora__dark);
+  color: var(--text__dark);
+}
+.contenedor.dark .calculadora .display__screen {
+  background-color: #333;
+  color: var(--text__dark);
+}
+.contenedor.dark .calculadora .btn__operator {
+  background-color: var(--key__opera__dark);
+}
+.contenedor.dark .calculadora .btn__operator:hover {
+  background-color: #c4c4c4;
+}
+.contenedor.dark .calculadora #clean,
+.contenedor.dark .calculadora #D {
+  background-color: var(--key__opera2__dark);
+  color: var(--text__dark);
+}
+.contenedor.dark .calculadora #clean:hover,
+.contenedor.dark .calculadora #D:hover {
+  background-color: #145d84;
 }/*# sourceMappingURL=styles.css.map */
