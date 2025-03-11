@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
     <title>Calculadora</title>
-    
   </head>
   <body>
     <main class="contenedor">
@@ -15,52 +17,57 @@
         <div class="theme__light active">
           <!--  
           <i class="theme-icon"></i>
-          -->  
+          -->
         </div>
 
-          <div class="display__screen">
+        <div class="display__screen">
           <div class="display"></div>
-
         </div>
 
         <div class="buttons">
-            <table>
-                <tr>
-                    <td><button class="btn__operator" id="clean">AC</button></td>
-                    <td><button class="btn__operator" id="/">/</button></td>
-                    <td><button class="btn__operator" id="*">*</button></td>
-                    <td><button class="btn__operator" id="D">DEL</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn__number" id="7">7</button></td>
-                    <td><button class="btn__number" id="8">8</button></td>
-                    <td><button class="btn__number" id="9">9</button></td>
-                    <td><button id="deleteLastNumber" class="btn__operator">⌫</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn__number" id="4">4</button></td>
-                    <td><button class="btn__number" id="5">5</button></td>
-                    <td><button class="btn__number" id="6">6</button></td>
-                    <td><button class="btn__operator" id="-">-</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn__number" id="1">1</button></td>
-                    <td><button class="btn__number" id="2">2</button></td>
-                    <td><button class="btn__number" id="3">3</button></td>
-                    <td><button class="btn__operator" id="+">+</button></td>
-                </tr>
-                <tr>
-                    <td><button class="btn__operator" id=".">.</button></td>
-                    <td><button class="btn__number" id="0">0</button></td>
-                    <td><button class="btn__number" id="00">00</button></td>
-                    <td><button class="btn__igual" id="=">=</button></td>
-                </tr>
-            </table>
+          <table>
+            <tr>
+              <td><button class="btn__operator" id="clean">AC</button></td>
+              <td><button class="btn__operator" id="/">/</button></td>
+              <td><button class="btn__operator" id="*">*</button></td>
+              <td><button class="btn__operator" id="D">DEL</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn__number" id="7">7</button></td>
+              <td><button class="btn__number" id="8">8</button></td>
+              <td><button class="btn__number" id="9">9</button></td>
+              <td>
+                <button id="deleteLastNumber" class="btn__operator">⌫</button>
+              </td>
+            </tr>
+            <tr>
+              <td><button class="btn__number" id="4">4</button></td>
+              <td><button class="btn__number" id="5">5</button></td>
+              <td><button class="btn__number" id="6">6</button></td>
+              <td><button class="btn__operator" id="-">-</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn__number" id="1">1</button></td>
+              <td><button class="btn__number" id="2">2</button></td>
+              <td><button class="btn__number" id="3">3</button></td>
+              <td><button class="btn__operator" id="+">+</button></td>
+            </tr>
+            <tr>
+              <td><button class="btn__operator" id=".">.</button></td>
+              <td><button class="btn__number" id="0">0</button></td>
+              <td>
+                <button onclick="calcularPorcentaje()" class="btn__number" id="%">
+                  %
+                </button>
+              </td>
+              <td><button class="btn__igual" id="=">=</button></td>
+            </tr>
+          </table>
         </div>
       </section>
     </main>
 
-    <H5>Historial:</H5>
+    <h5>Historial:</h5>
 
     <script src="script.js"></script>
   </body>

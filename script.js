@@ -60,6 +60,12 @@ buttons.forEach(item => {
                 display.innerHTML += item.id;  
             }  
         }  
+        else if (item.id === '%') {  
+            let valor = parseFloat(display.innerHTML);  
+            if (!isNaN(valor)) {  
+                display.innerHTML = (valor / 100).toString();  
+            }  
+        }  
         else if (display.innerHTML != '' && item.id === '=') {  
             try {  
                 const expression = display.innerHTML;  
@@ -78,7 +84,7 @@ buttons.forEach(item => {
                 display.innerHTML = "Error";  
                 setTimeout(() => (display.innerHTML = ""), 1200);  
             }  
-        }  
+        }
         else if (display.innerHTML == '' && item.id === '=') {  
             display.innerHTML = "Null";  
             setTimeout(() => (display.innerHTML = ""), 1200);  
@@ -117,4 +123,4 @@ function updateHistoryList() {
         listItem.textContent = `[${[i + 1]}]    ${history[i]}`;  
         historyList.appendChild(listItem);  
     }  
-}  
+}
