@@ -25,6 +25,7 @@ function deleteLastNumberAndOperator() {
             break;  
         }  
     }  
+    
 
     if (lastOperatorIndex !== -1) {  
         display.innerHTML = cadena.substring(0, lastOperatorIndex);  
